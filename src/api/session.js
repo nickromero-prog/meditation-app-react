@@ -10,3 +10,14 @@ export const indexSessions = (user) => {
     }
   })
 }
+
+export const createSession = (user, session) => {
+  return axios({
+    method: 'POST',
+    url: apiUrl + '/sessions',
+    headers: {
+      Authorization: `Token ${user.token}`
+    },
+    data: { session }
+  })
+}

@@ -25,7 +25,7 @@ const alwaysOptions = (
 const Header = ({ user }) => (
   <Navbar bg="success" variant="dark" expand="md">
     <Navbar.Brand href="#">
-      Go Offline
+      offline
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

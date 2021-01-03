@@ -10,7 +10,7 @@ import SignIn from './components/SignIn/SignIn'
 import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import SessionIndex from './components/Sessions/SessionIndex'
-
+import SessionCreate from './components/Sessions/SessionCreate'
 class App extends Component {
   constructor () {
     super()
@@ -68,6 +68,12 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/sessions' render={() => (
             <SessionIndex user={user} msgAlert={this.msgAlert}/>
+          )} />
+          <AuthenticatedRoute user={user} path='/session-create' render={() => (
+            <SessionCreate
+              user={user}
+              msgAlert={this.msgAlert}
+            />
           )} />
         </main>
       </Fragment>
