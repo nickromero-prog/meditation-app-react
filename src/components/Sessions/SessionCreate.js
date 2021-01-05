@@ -7,7 +7,7 @@ class SessionCreate extends Component {
     super()
     this.state = {
       session: {
-        length: ''
+        time_length: ''
       },
       createdId: null
     }
@@ -17,11 +17,17 @@ class SessionCreate extends Component {
   // use object.assign to merge that object with the current state "session"
   // run setState to reassign the 'session' to our merged object
   handleChange = (event) => {
-    console.log('changing')
+    // This code currently uses `event.target.value` for all inputs, storing string values in the state
+    // add an "if the event.target.type is an integer"
+    // then parse `event.target.value` and store the number rather than the string
+    if (event.target.type === parseInt(event.target.value, 10)) {
+      return parseInt(event.target.value, 10)
+    }
 
     const updatedField = { [event.target.name]: event.target.value }
 
     this.setState(currState => {
+      // one way of doing it using object.assign
       // const updatedSession = Object.assign({}, currState.session, updatedField)
       const updatedSession = { ...currState.session, ...updatedField }
       return { session: updatedSession }
@@ -32,10 +38,24 @@ class SessionCreate extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const { user } = this.props
+    const { user, msgAlert } = this.props
     createSession(user, this.state.session)
       .then((res) => {
         this.setState({ createdId: res.data.session._id })
+      })
+      .then(() => {
+        msgAlert({
+          heading: 'Session Logged',
+          message: 'Good effort!',
+          variant: 'success'
+        })
+      })
+      .catch((err) => {
+        msgAlert({
+          heading: 'Unable to log session',
+          message: 'Something went wrong, try again. Error: ' + err.message,
+          variant: 'danger'
+        })
       })
   }
 
@@ -49,12 +69,12 @@ class SessionCreate extends Component {
         <form onSubmit={this.handleSubmit}>
           <input
             placeholder="How many minutes?"
-            value={this.state.session.length}
+            value={this.state.session.time_length}
             onChange={this.handleChange}
-            name="length"
+            name="time_length"
           />
+          <button type='submit'>Submit</button>
         </form>
-        <button type='submit'>Submit</button>
       </Fragment>
     )
   }

@@ -1,8 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { indexSessions } from '../../api/session'
+import { Link } from 'react-router-dom'
+// beginning of component
 class SessionIndex extends Component {
+  // always necessary constructor function when using a class component
   constructor () {
+    // super function
     super()
+    // set the initial state to null since you will populate the array with the created ones from the user
     this.state = {
       sessionArray: null
     }
@@ -47,6 +52,7 @@ class SessionIndex extends Component {
             <Fragment key={session.id}>
               <h2>Length {session.time_length}</h2>
               <p>{session.created_at}</p>
+              <Link to={`/session-show/${session._id}`}>See this session</Link>
             </Fragment>
           ))}
         </div>

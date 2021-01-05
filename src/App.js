@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
 import { v4 as uuid } from 'uuid'
 
+// Components
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Header/Header'
@@ -11,6 +12,10 @@ import SignOut from './components/SignOut/SignOut'
 import ChangePassword from './components/ChangePassword/ChangePassword'
 import SessionIndex from './components/Sessions/SessionIndex'
 import SessionCreate from './components/Sessions/SessionCreate'
+import SessionShow from './components/Sessions/SessionShow'
+import SessionUpdate from './components/Sessions/SessionUpdate'
+
+// Master Component
 class App extends Component {
   constructor () {
     super()
@@ -75,6 +80,20 @@ class App extends Component {
               msgAlert={this.msgAlert}
             />
           )} />
+          <AuthenticatedRoute user={user} path='/session-show/:sessionId' render={({ match }) => (
+            <SessionShow
+              user={user}
+              msgAlert={this.msgAlert}
+              match={match}
+            />
+          )} />
+          <AuthenticatedRoute user={user} path='/session-update/:sessionId' render={({ match }) => (
+            <SessionUpdate
+              match={match}
+              msgAlert={this.msgAlert}
+              user={user}
+            />
+          )}/>
         </main>
       </Fragment>
     )
