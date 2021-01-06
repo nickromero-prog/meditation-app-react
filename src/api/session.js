@@ -41,3 +41,13 @@ export const updateSession = (user, session, id) => {
     data: { session: session }
   })
 }
+
+export const deleteSession = (user, sessionId) => {
+  return axios({
+    method: 'DELETE',
+    url: apiUrl + '/sessions/' + sessionId,
+    headers: {
+      Authorization: `Token ${user.token}`
+    }
+  })
+}
