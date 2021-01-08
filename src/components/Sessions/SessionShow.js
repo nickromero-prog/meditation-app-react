@@ -44,7 +44,6 @@ const SessionShow = (props) => {
         })
       })
       .then(() => setUpdated(true))
-      // .then(() => history.push('/sessions/'))
       .catch(err => {
         msgAlert({
           heading: 'Delete Fail',
@@ -68,7 +67,7 @@ const SessionShow = (props) => {
     <div>
       {session ? (
         <div>
-          <h2>Duration: {session.time_length} minutes</h2>
+          <h2>Duration: {session.time_length} minutes with the force</h2>
           <Button onClick={handleDelete}>Delete Session</Button>
           <Link to={`/session-update/${session.id}`}><Button>Update Session</Button></Link>
         </div>

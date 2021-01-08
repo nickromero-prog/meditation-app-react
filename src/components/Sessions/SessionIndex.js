@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { indexSessions } from '../../api/session'
 import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 // beginning of component
 class SessionIndex extends Component {
   // always necessary constructor function when using a class component
@@ -50,9 +51,9 @@ class SessionIndex extends Component {
         <div>
           {this.state.sessionArray.map(session => (
             <Fragment key={session.id}>
-              <h2>Duration: {session.time_length} minutes</h2>
+              <h2>Duration: {session.time_length} minutes with the force</h2>
               <p>{session.created_at}</p>
-              <Link to={`/sessions/${session.id}`}>Update/Delete Session</Link>
+              <Link to={`/sessions/${session.id}`}><Button> Update | Delete </Button></Link>
               <br />
               <br />
             </Fragment>
