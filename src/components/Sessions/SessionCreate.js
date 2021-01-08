@@ -44,7 +44,7 @@ class SessionCreate extends Component {
       //   console.log(res)
       // })
       .then((res) => {
-        this.setState({ createdId: res.data.session._id })
+        this.setState({ createdId: res.data.session.id })
       })
       .then(() => {
         msgAlert({
@@ -64,7 +64,7 @@ class SessionCreate extends Component {
 
   render () {
     if (this.state.createdId) {
-      return <Redirect to='sessions'/>
+      return <Redirect to='/sessions'/>
     }
     return (
       <Fragment>

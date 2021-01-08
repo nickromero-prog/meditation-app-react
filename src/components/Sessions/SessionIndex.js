@@ -20,13 +20,13 @@ class SessionIndex extends Component {
       .then(res => {
         this.setState({ sessionArray: res.data.sessions })
       })
-      .then(() => {
-        msgAlert({
-          heading: 'Acquired sessions',
-          message: 'Displaying sessions',
-          variant: 'success'
-        })
-      })
+      // .then(() => {
+      //   msgAlert({
+      //     heading: 'Acquired sessions',
+      //     message: 'Displaying sessions',
+      //     variant: 'success'
+      //   })
+      // })
       .catch(err => {
         msgAlert({
           heading: 'Session Index Failed',
@@ -52,7 +52,9 @@ class SessionIndex extends Component {
             <Fragment key={session.id}>
               <h2>Duration: {session.time_length} minutes</h2>
               <p>{session.created_at}</p>
-              <Link to={`/sessions/${session.id}`}>See this session</Link>
+              <Link to={`/sessions/${session.id}`}>Update/Delete Session</Link>
+              <br />
+              <br />
             </Fragment>
           ))}
         </div>

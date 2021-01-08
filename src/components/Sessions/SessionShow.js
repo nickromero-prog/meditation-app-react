@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { showSession, deleteSession } from '../../api/session'
+import { Link } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+// import { Redirect } from 'react-router-dom'
 // functional component passed some props from the parent component which is
 const SessionShow = (props) => {
   const [session, setSession] = useState(null)
@@ -49,12 +52,17 @@ const SessionShow = (props) => {
       })
   }
 
+  // const handleUpdate = () => {
+  //   <Redirect
+  // }
+
   return (
     <div>
       {session ? (
         <div>
-          <h2>{session.time_length} minutes</h2>
-          <button onClick={handleDelete}>Delete Session</button>
+          <h2>Duration: {session.time_length} minutes</h2>
+          <Button onClick={handleDelete}>Delete Session</Button>
+          <Link to={`/session-update/${session.id}`}><Button>Update Session</Button></Link>
         </div>
       ) : 'Loading...'}
     </div>

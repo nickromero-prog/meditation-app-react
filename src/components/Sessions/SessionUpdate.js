@@ -4,6 +4,7 @@ import { showSession, updateSession } from '../../api/session'
 
 const SessionUpdate = (props) => {
   const [session, setSession] = useState({ time_length: '' })
+  // const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
     const { user, match, msgAlert } = props
