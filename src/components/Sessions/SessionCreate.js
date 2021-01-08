@@ -40,6 +40,9 @@ class SessionCreate extends Component {
 
     const { user, msgAlert } = this.props
     createSession(user, this.state.session)
+      // .then((res) => {
+      //   console.log(res)
+      // })
       .then((res) => {
         this.setState({ createdId: res.data.session._id })
       })

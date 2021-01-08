@@ -50,9 +50,9 @@ class SessionIndex extends Component {
         <div>
           {this.state.sessionArray.map(session => (
             <Fragment key={session.id}>
-              <h2>Length {session.time_length}</h2>
+              <h2>Duration: {session.time_length} minutes</h2>
               <p>{session.created_at}</p>
-              <Link to={`/session-show/${session._id}`}>See this session</Link>
+              <Link to={`/sessions/${session.id}`}>See this session</Link>
             </Fragment>
           ))}
         </div>

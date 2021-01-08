@@ -71,7 +71,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/sessions' render={() => (
+          <AuthenticatedRoute user={user} exact path='/sessions' render={() => (
             <SessionIndex user={user} msgAlert={this.msgAlert}/>
           )} />
           <AuthenticatedRoute user={user} path='/session-create' render={() => (
@@ -80,7 +80,7 @@ class App extends Component {
               msgAlert={this.msgAlert}
             />
           )} />
-          <AuthenticatedRoute user={user} path='/session-show/:sessionId' render={({ match }) => (
+          <AuthenticatedRoute user={user} path='/sessions/:sessionId' render={({ match }) => (
             <SessionShow
               user={user}
               msgAlert={this.msgAlert}
