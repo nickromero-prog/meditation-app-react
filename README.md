@@ -14,14 +14,14 @@ Back End Deployed Site: https://django-deploy-med-app.herokuapp.com/
 
 User Stories:
 
-As a user, I want to be able to sign-up in order to keep track of my meditation sessions.
-As a user, I want to be able to sign-in in order to keep track of my meditations sessions.
-As a user, I want to be able to choose the length of my meditation session in order to keep to my schedule.
-As a user I want to be able to start a timer for my meditation session.
-As a user I want to see my meditation sessions in order to see how I have been practicing.
-As a user I want to be able to delete a session in case I feel like I don't want that one counted
-As a user, I want to be able to restart my session in order to start over or cancel my current session.
-As a user, I want to be able to sign-out so that my sessions reflect only me.
+1. As a user, I want to be able to sign-up in order to keep track of my meditation sessions.
+2. As a user, I want to be able to sign-in in order to keep track of my meditations sessions.
+3. As a user, I want to be able to choose the length of my meditation session in order to keep to my schedule.
+4. As a user I want to be able to start a timer for my meditation session.
+5. As a user I want to see my meditation sessions in order to see how I have been practicing.
+6. As a user I want to be able to delete a session in case I feel like I don't want that one counted
+7. As a user, I want to be able to restart my session in order to start over or cancel my current session.
+8. As a user, I want to be able to sign-out so that my sessions reflect only me.
 
 Future Problems to Fix:
 1) I want to add a timer and a clock so that you can create the sessions
