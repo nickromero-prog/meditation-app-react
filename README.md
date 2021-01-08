@@ -16,12 +16,12 @@ User Stories:
 
 1. As a user, I want to be able to sign-up in order to keep track of my meditation sessions.
 2. As a user, I want to be able to sign-in in order to keep track of my meditations sessions.
-3. As a user, I want to be able to choose the length of my meditation session in order to keep to my schedule.
-4. As a user I want to be able to start a timer for my meditation session.
-5. As a user I want to see my meditation sessions in order to see how I have been practicing.
-6. As a user I want to be able to delete a session in case I feel like I don't want that one counted
-7. As a user, I want to be able to restart my session in order to start over or cancel my current session.
-8. As a user, I want to be able to sign-out so that my sessions reflect only me.
+3. As a user, I want to be able to sign-out so that my sessions reflect only me.
+4. As a user I want to see my meditation sessions, in order to see how I have been practicing.
+5. As a user I want to be able to delete a session in case I feel like I don't want that one counted.
+6. As a user I want to be able to create a session so that I can reference it in my app later.
+7. As a user I want ot be ablet to update a session so that I can change the time length in case I meditated longer or shorter.
+
 
 Future Problems to Fix:
 1) I want to add a timer and a clock so that you can create the sessions
