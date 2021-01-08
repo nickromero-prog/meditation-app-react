@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { showSession, deleteSession } from '../../api/session'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 // import { Redirect } from 'react-router-dom'
 // functional component passed some props from the parent component which is
 const SessionShow = (props) => {
   const [session, setSession] = useState(null)
+  const [updated, setUpdated] = useState(false)
 
   const { user, msgAlert, match } = props
   // useEffect for componentDidMount
@@ -42,6 +43,7 @@ const SessionShow = (props) => {
           variant: 'success'
         })
       })
+      .then(() => setUpdated(true))
       // .then(() => history.push('/sessions/'))
       .catch(err => {
         msgAlert({
@@ -50,6 +52,12 @@ const SessionShow = (props) => {
           variant: 'danger'
         })
       })
+  }
+
+  if (updated) {
+    return (
+      <Redirect to={'/sessions/'} />
+    )
   }
 
   // const handleUpdate = () => {
