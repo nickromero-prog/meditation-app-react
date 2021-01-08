@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import { showSession, updateSession } from '../../api/session'
+import { Button } from 'react-bootstrap'
 
 const SessionUpdate = (props) => {
   const [session, setSession] = useState({ time_length: '' })
-  // const [updated, setUpdated] = useState(false)
+  const [updated, setUpdated] = useState(false)
 
   useEffect(() => {
     const { user, match, msgAlert } = props
@@ -33,19 +34,25 @@ const SessionUpdate = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    const { user, msgAlert, match, history } = props
+    const { user, msgAlert, match } = props
     updateSession(user, session, match.params.sessionId)
-      .then(() => history.push('./session-show/' + match.params.sessionId))
       .then(() => msgAlert({
         heading: 'Update Successful',
         message: 'Updated Session',
         variant: 'success'
       }))
+      .then(() => setUpdated(true))
       .catch(err => msgAlert({
         heading: 'Update failed',
         message: 'Error: ' + err.message,
         variant: 'danger'
       }))
+  }
+
+  if (updated) {
+    return (
+      <Redirect to={'/sessions/'} />
+    )
   }
 
   return (
@@ -58,7 +65,7 @@ const SessionUpdate = (props) => {
           name="time_length"
           onChange={handleChange}
         />
-        <button type="submit">Update Session</button>
+        <Button type="submit">Update Session</Button>
       </form>
     </React.Fragment>
   )
