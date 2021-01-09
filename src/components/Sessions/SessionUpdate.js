@@ -12,11 +12,6 @@ const SessionUpdate = (props) => {
     // show request
     showSession(user, match.params.sessionId)
       .then(res => setSession(res.data.session))
-      .then(() => msgAlert({
-        heading: 'Your Session',
-        message: '',
-        variant: 'success'
-      }))
       .catch(err => msgAlert({
         heading: 'Your Session Failed',
         message: 'Error: ' + err.message,
@@ -38,7 +33,7 @@ const SessionUpdate = (props) => {
     updateSession(user, session, match.params.sessionId)
       .then(() => msgAlert({
         heading: 'Update Successful',
-        message: 'Updated Session',
+        message: '',
         variant: 'success'
       }))
       .then(() => setUpdated(true))
