@@ -51,8 +51,9 @@ class SessionIndex extends Component {
         <div>
           {this.state.sessionArray.map(session => (
             <Fragment key={session.id}>
-              <h2>Duration: {session.time_length} minutes with the force</h2>
-              <p>{session.created_at}</p>
+              <br />
+              <h3>{session.time_length} minutes observing the force</h3>
+              <p>{new Date(session.created_at).toString().slice(0, 15)}</p>
               <Link to={`/sessions/${session.id}`}><Button> Update | Delete </Button></Link>
               <br />
               <br />
@@ -63,5 +64,6 @@ class SessionIndex extends Component {
     }
   }
 }
+// <p>{session.created_at}</p>
 
 export default SessionIndex

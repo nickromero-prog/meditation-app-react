@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 import { showSession, updateSession } from '../../api/session'
-import { Button } from 'react-bootstrap'
+import { Form, Button } from 'react-bootstrap'
 
 const SessionUpdate = (props) => {
   const [session, setSession] = useState({ time_length: '' })
@@ -57,16 +57,16 @@ const SessionUpdate = (props) => {
 
   return (
     <React.Fragment>
-      <h1>Update a Session</h1>
-      <form onSubmit={handleSubmit}>
-        <input
+      <h3>Update a Session</h3>
+      <Form onSubmit={handleSubmit}>
+        <Form.Control
           placeholder="How many minutes?"
           value={session.time_length}
           name="time_length"
           onChange={handleChange}
         />
         <Button type="submit">Update Session</Button>
-      </form>
+      </Form>
     </React.Fragment>
   )
 }

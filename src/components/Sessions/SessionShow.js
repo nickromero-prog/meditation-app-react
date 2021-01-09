@@ -18,13 +18,6 @@ const SessionShow = (props) => {
       .then((res) => {
         setSession(res.data.session)
       })
-      .then(() => {
-        msgAlert({
-          heading: 'Your Session',
-          message: '',
-          variant: 'success'
-        })
-      })
       .catch(err => {
         msgAlert({
           heading: 'Show single session failed',
@@ -39,7 +32,7 @@ const SessionShow = (props) => {
       .then(() => {
         msgAlert({
           heading: 'Session Deleted',
-          message: 'See revised session list',
+          message: '',
           variant: 'success'
         })
       })
@@ -67,7 +60,7 @@ const SessionShow = (props) => {
     <div>
       {session ? (
         <div>
-          <h2>Duration: {session.time_length} minutes with the force</h2>
+          <h2>{session.time_length} minutes observing the force</h2>
           <Button onClick={handleDelete}>Delete Session</Button>
           <Link to={`/session-update/${session.id}`}><Button>Update Session</Button></Link>
         </div>

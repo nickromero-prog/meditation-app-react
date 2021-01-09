@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { createSession } from '../../api/session'
 import { Redirect } from 'react-router-dom'
+import { Form, Button } from 'react-bootstrap'
 
 class SessionCreate extends Component {
   constructor () {
@@ -65,16 +66,20 @@ class SessionCreate extends Component {
     }
     return (
       <Fragment>
-        <h2>Log a Session</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            placeholder="How many minutes?"
-            value={this.state.session.time_length}
-            onChange={this.handleChange}
-            name="time_length"
-          />
-          <button type='submit'>Submit</button>
-        </form>
+        <Form.Group controlId="create session">
+          <br />
+          <h3>Log A Meditation Session</h3>
+          <br />
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Control
+              placeholder="How many minutes?"
+              value={this.state.session.time_length}
+              onChange={this.handleChange}
+              name="time_length"
+            />
+            <Button type='submit'>Submit</Button>
+          </Form>
+        </Form.Group>
       </Fragment>
     )
   }
