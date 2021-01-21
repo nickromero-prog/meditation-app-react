@@ -46,8 +46,7 @@ class SessionCreate extends Component {
       })
       .then(() => {
         msgAlert({
-          heading: '',
-          message: 'logged force minutes',
+          heading: 'Logged Meditation',
           variant: 'success'
         })
       })

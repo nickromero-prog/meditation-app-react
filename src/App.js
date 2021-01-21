@@ -25,9 +25,25 @@ class App extends Component {
     }
   }
 
-  setUser = user => this.setState({ user })
+  componentDidMount () {
+    this.tryAutoSignIn()
+  }
 
-  clearUser = () => this.setState({ user: null })
+  setUser = user => {
+    this.setState({ user })
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+
+  clearUser = user => {
+    this.setState({ user: null })
+    localStorage.setItem('user', JSON.stringify(user))
+  }
+
+  tryAutoSignIn = () => {
+    if (localStorage.getItem('user') && !this.state.user) {
+      this.setState({ user: JSON.parse(localStorage.getItem('user')) })
+    }
+  }
 
   deleteAlert = (id) => {
     this.setState((state) => {

@@ -44,7 +44,10 @@ class SessionIndex extends Component {
       )
     } else if (this.state.sessionArray.length === 0) {
       return (
-        'No sessions yet'
+        <div>
+          <br />
+          <h2>No sessions yet</h2>
+        </div>
       )
     } else {
       return (
