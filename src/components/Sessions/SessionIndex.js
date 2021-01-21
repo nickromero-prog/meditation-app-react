@@ -46,7 +46,7 @@ class SessionIndex extends Component {
       return (
         <div>
           <br />
-          <h2>No sessions yet</h2>
+          <h2>No logged connections to the Force</h2>
         </div>
       )
     } else {
