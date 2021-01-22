@@ -57,7 +57,9 @@ const SessionUpdate = (props) => {
 
   return (
     <React.Fragment>
+      <br />
       <h3>Update a Session</h3>
+      <br />
       <Form onSubmit={handleSubmit}>
         <Form.Control
           placeholder="How many minutes?"
@@ -65,7 +67,8 @@ const SessionUpdate = (props) => {
           name="time_length"
           onChange={handleChange}
         />
-        <Button type="submit">Update Session</Button>
+        <br />
+        <Button type="submit">Update</Button>
       </Form>
     </React.Fragment>
   )

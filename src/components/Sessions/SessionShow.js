@@ -59,12 +59,17 @@ const SessionShow = (props) => {
   return (
     <div>
       {session ? (
-        <div>
+        <div className="sessionShow">
           <br />
-          <h2>{session.time_length} minutes observing the force</h2>
           <br />
-          <Button variant="danger "onClick={handleDelete}>Delete Session</Button>
-          <Link to={`/session-update/${session.id}`}><Button className="updatebutton">Update Session</Button></Link>
+          <br />
+          <h2>{session.time_length} minutes observing the Force</h2>
+          <br />
+          <div className="sessionShowButtons">
+            <Button variant="danger" onClick={handleDelete}>Delete</Button>
+            <br />
+            <Link to={`/session-update/${session.id}`}><Button className="updatebutton">Update</Button></Link>
+          </div>
         </div>
       ) : 'Loading...'}
     </div>
