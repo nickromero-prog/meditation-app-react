@@ -59,6 +59,7 @@ const SessionShow = (props) => {
   return (
     <div>
       {session ? (
+<<<<<<< HEAD
         <div className="sessionShow">
           <br />
           <br />
@@ -70,6 +71,14 @@ const SessionShow = (props) => {
             <br />
             <Link to={`/session-update/${session.id}`}><Button className="updatebutton">Update</Button></Link>
           </div>
+=======
+        <div>
+          <br />
+          <h2>{session.time_length} minutes observing the force</h2>
+          <br />
+          <Button variant="danger "onClick={handleDelete}>Delete Session</Button>
+          <Link to={`/session-update/${session.id}`}><Button className="updatebutton">Update Session</Button></Link>
+>>>>>>> development
         </div>
       ) : 'Loading...'}
     </div>

@@ -46,8 +46,12 @@ class SessionCreate extends Component {
       })
       .then(() => {
         msgAlert({
+<<<<<<< HEAD
           heading: '',
           message: 'Logged Connection with the Force',
+=======
+          heading: 'Logged Meditation',
+>>>>>>> development
           variant: 'success'
         })
       })
