@@ -68,16 +68,17 @@ class SessionCreate extends Component {
       <Fragment>
         <Form.Group controlId="create session">
           <br />
-          <h3>Log A Meditation Session</h3>
+          <h3>Log Force Connection</h3>
           <br />
           <Form onSubmit={this.handleSubmit}>
             <Form.Control
-              placeholder="How many minutes?"
+              placeholder="How many minutes did you connect with the force?"
               value={this.state.session.time_length}
               onChange={this.handleChange}
               name="time_length"
             />
-            <Button type='submit'>Submit</Button>
+            <br />
+            <Button type='submit' variant="success">Submit</Button>
           </Form>
         </Form.Group>
       </Fragment>

@@ -1,1 +1,17 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Taviraj&display=swap');
+
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.nav {
+  background-color: #3D5473;
+  font-family: 'Taviraj', serif;
+}
+
+.updatebutton {
+  margin: 0px 0px 0px 10px;
+}

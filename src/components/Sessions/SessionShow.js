@@ -60,9 +60,11 @@ const SessionShow = (props) => {
     <div>
       {session ? (
         <div>
+          <br />
           <h2>{session.time_length} minutes observing the force</h2>
-          <Button onClick={handleDelete}>Delete Session</Button>
-          <Link to={`/session-update/${session.id}`}><Button>Update Session</Button></Link>
+          <br />
+          <Button variant="danger "onClick={handleDelete}>Delete Session</Button>
+          <Link to={`/session-update/${session.id}`}><Button className="updatebutton">Update Session</Button></Link>
         </div>
       ) : 'Loading...'}
     </div>

@@ -27,6 +27,7 @@ class App extends Component {
 
   componentDidMount () {
     this.tryAutoSignIn()
+    document.body.style.backgroundColor = '#C2D7F2'
   }
 
   setUser = user => {
@@ -62,8 +63,8 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment>
-        <Header user={user} />
+      <Fragment className="sitefragment">
+        <Header className="header" user={user} />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}

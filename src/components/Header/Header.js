@@ -25,14 +25,14 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="primary" variant="dark" expand="md">
+  <Navbar className='nav' variant="dark" expand="md">
     <Navbar.Brand href="#">
-    jedi meditation training
+    Feel the Force
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">{user.email}</span>}
+
         { alwaysOptions }
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
@@ -41,3 +41,5 @@ const Header = ({ user }) => (
 )
 
 export default Header
+// this can be used to display the user's email in the nav bar by moving it to line 35
+// { user && <span className="navbar-text mr-2">{user.email}</span>}
