@@ -58,6 +58,9 @@ class SessionIndex extends Component {
               <h3 className="indexHeader">{session.time_length} minutes observing the Force</h3>
               <p>{new Date(session.created_at).toString().slice(0, 15)}</p>
               <Link to={`/sessions/${session.id}`}><Button variant="warning">Edit</Button></Link>
+              <h3>{session.time_length} minutes observing the Force</h3>
+              <p>{new Date(session.created_at).toString().slice(0, 15)}</p>
+              <Link to={`/sessions/${session.id}`}><Button variant="warning"> Update | Delete </Button></Link>
               <br />
               <br />
             </Fragment>
