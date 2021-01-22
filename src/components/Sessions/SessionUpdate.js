@@ -38,10 +38,6 @@ const SessionUpdate = (props) => {
     updateSession(user, session, match.params.sessionId)
       .then(() => msgAlert({
         heading: 'Update Successful',
-<<<<<<< HEAD
-        message: '',
-=======
->>>>>>> development
         variant: 'success'
       }))
       .then(() => setUpdated(true))
