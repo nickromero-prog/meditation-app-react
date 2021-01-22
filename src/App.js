@@ -26,7 +26,7 @@ class App extends Component {
   }
 
   componentDidMount () {
-    this.tryAutoSignIn()
+    // this.tryAutoSignIn()
     document.body.style.backgroundColor = '#C2D7F2'
   }
 
@@ -37,14 +37,14 @@ class App extends Component {
 
   clearUser = user => {
     this.setState({ user: null })
-    localStorage.setItem('user', JSON.stringify(user))
+    // localStorage.setItem('user', JSON.stringify(user))
   }
 
-  tryAutoSignIn = () => {
-    if (localStorage.getItem('user') && !this.state.user) {
-      this.setState({ user: JSON.parse(localStorage.getItem('user')) })
-    }
-  }
+  // tryAutoSignIn = () => {
+  //   if (localStorage.getItem('user') && !this.state.user) {
+  //     this.setState({ user: JSON.parse(localStorage.getItem('user')) })
+  //   }
+  // }
 
   deleteAlert = (id) => {
     this.setState((state) => {
