@@ -14,6 +14,7 @@ import SessionIndex from './components/Sessions/SessionIndex'
 import SessionCreate from './components/Sessions/SessionCreate'
 import SessionShow from './components/Sessions/SessionShow'
 import SessionUpdate from './components/Sessions/SessionUpdate'
+import Home from './components/Home/Home'
 
 // Master Component
 class App extends Component {
@@ -63,8 +64,10 @@ class App extends Component {
     const { msgAlerts, user } = this.state
 
     return (
-      <Fragment className="sitefragment">
-        <Header className="header" user={user} />
+      <Fragment>
+        <Header className="header" user={user}
+        />
+        <Home />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}

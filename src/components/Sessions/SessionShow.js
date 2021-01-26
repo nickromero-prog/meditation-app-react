@@ -57,7 +57,7 @@ const SessionShow = (props) => {
   // }
 
   return (
-    <div>
+    <div className ="sessionShow">
       {session ? (
         <div>
           <br />
