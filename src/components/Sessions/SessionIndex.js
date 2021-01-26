@@ -65,6 +65,7 @@ class SessionIndex extends Component {
               <Link to={`/sessions/${session.id}`}><Button variant="warning">Edit</Button></Link>
               <br />
               <br />
+              <br />
             </Fragment>
           ))}
         </div>
