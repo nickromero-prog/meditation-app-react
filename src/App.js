@@ -67,7 +67,6 @@ class App extends Component {
       <Fragment>
         <Header className="header" user={user}
         />
-        <Home />
         {msgAlerts.map((msgAlert, index) => (
           <AutoDismissAlert
             key={index}
@@ -79,6 +78,9 @@ class App extends Component {
           />
         ))}
         <main className="container">
+          <Route exact path='/' render={() => (
+            <Home />
+          )} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
           )} />

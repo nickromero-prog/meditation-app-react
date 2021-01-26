@@ -1,10 +1,10 @@
 import React from 'react'
-import jedimedchamber from '/jedimedchamber.jpg'
+import jedimedchamber from '/Users/nickromero/sei/projects/projectcapstone/meditation-app-react/src/components/Home/jedimedchamber.jpg'
 
 const Home = (props) => {
   return (
     <div>
-      <img src={jedimedchamber} alt="jedi meditation chamber picture" />
+      <img className="cavepicture" src={jedimedchamber} alt="jedi meditation chamber picture" />
     </div>
   )
 }

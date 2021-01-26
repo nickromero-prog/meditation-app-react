@@ -12,6 +12,17 @@ body {
   font-family: 'Taviraj', serif;
 }
 
+.cavepicture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64em;
+  height: 35em;
+  border-radius: 130px;
+  padding: 30px;
+  margin: 0px 0px 0px 40px;
+}
+
 .updatebutton {
   margin: 0px 0px 0px 10px;
 }
