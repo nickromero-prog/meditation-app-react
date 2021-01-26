@@ -29,7 +29,7 @@ class SignIn extends Component {
     signIn(this.state)
       .then(res => setUser(res.data.user))
       .then(() => msgAlert({
-        heading: 'Welcome Jedi',
+        heading: 'Welcome',
         variant: 'success'
       }))
       .then(() => history.push('/'))

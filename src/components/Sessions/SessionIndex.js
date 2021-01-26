@@ -21,13 +21,9 @@ class SessionIndex extends Component {
       .then(res => {
         this.setState({ sessionArray: res.data.sessions })
       })
-      // .then(() => {
-      //   msgAlert({
-      //     heading: 'Acquired sessions',
-      //     message: 'Displaying sessions',
-      //     variant: 'success'
-      //   })
-      // })
+      .then(() => {
+        console.log(this.state.sessionArray)
+      })
       .catch(err => {
         msgAlert({
           heading: 'Session Index Failed',
@@ -36,6 +32,11 @@ class SessionIndex extends Component {
         })
       })
   }
+
+  // const minutesSum = this.state.sessionArray.reduce((accumulator, this.state.sessionArray.session.time_length) => {
+  //   const totalMinutes = accumulator + curSession.time_length
+  //   return totalMinutes
+  // }, 0)
 
   render () {
     if (!this.state.sessionArray) {
@@ -52,8 +53,12 @@ class SessionIndex extends Component {
     } else {
       return (
         <div>
+          <br />
+          <br />
+          <h3 className="minuteSum">{this.state.sessionArray.map(session => session.time_length).reduce((prev, next) => prev + next)} total minutes observing the Force</h3>
           {this.state.sessionArray.map(session => (
             <Fragment key={session.id}>
+              <br />
               <br />
               <h3 className="indexHeader">{session.time_length} minutes observing the Force</h3>
               <p>{new Date(session.created_at).toString().slice(0, 15)}</p>

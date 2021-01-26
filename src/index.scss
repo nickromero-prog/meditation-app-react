@@ -18,13 +18,26 @@ body {
   align-items: center;
   width: 64em;
   height: 35em;
-  border-radius: 130px;
+  border-radius: 60px;
   padding: 30px;
   margin: 0px 0px 0px 40px;
 }
 
 .updatebutton {
   margin: 0px 0px 0px 10px;
+}
+
+.minuteSum {
+  margin: 0px 0px 0px 275px;
+  text-align: center;
+  box-shadow: inset 10px #777777;
+  border: 10px;
+  border-top-left-radius: 80px 50px;
+  border-top-right-radius: 80px 50px;
+  border-bottom-left-radius: 80px 50px;
+  border-bottom-right-radius: 80px 50px;
+  background-color: white;
+  width: 550px;
 }
 
 .sessionShow {
